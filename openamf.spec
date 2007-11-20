@@ -14,13 +14,11 @@ Group:		Development/Languages/Java
 Source0:	http://dl.sourceforge.net/openamf/%{name}-%{version}%{_rc}.zip
 # Source0-md5:	de8096703da0853a1be6dc0148fec255
 URL:		http://sourceforge.net/projects/openamf/
-%if %(locale -a | grep -q '^en_US$'; echo $?)
-BuildRequires:	glibc-localedb-all
-%endif
 BuildRequires:	jpackage-utils
 BuildRequires:	rpm-javaprov
 BuildRequires:	rpmbuild(macros) >= 1.300
 BuildRequires:	sed >= 4.0
+BuildRequires:	jakarta-cactus
 Requires:	jpackage-utils
 BuildArch:	noarch
 ExclusiveArch:	i586 i686 pentium3 pentium4 athlon %{x8664} noarch
