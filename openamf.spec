@@ -3,15 +3,16 @@
 %bcond_without	javadoc		# don't build javadoc
 #
 %include	/usr/lib/rpm/macros.java
-%define		_rc		RC12
-%define		_rel	0.1
+%define		subver		RC12
+%define		rel	0.1
 Summary:	OpenAMF - Java Flash Remoting
+Summary(pl.UTF-8):	OpenAMF - sterowanie flashem z poziomu Javy
 Name:		openamf
 Version:	1.0
-Release:	%{_rc}.%{_rel}
+Release:	0.%{subver}.%{rel}
 License:	LGPL v2.1
 Group:		Development/Languages/Java
-Source0:	http://dl.sourceforge.net/openamf/%{name}-%{version}%{_rc}.zip
+Source0:	http://dl.sourceforge.net/openamf/%{name}-%{version}%{subver}.zip
 # Source0-md5:	de8096703da0853a1be6dc0148fec255
 URL:		http://sourceforge.net/projects/openamf/
 BuildRequires:	jpackage-utils
@@ -29,23 +30,28 @@ The OpenAMF project is a free open-source alternative to Macromedia's
 Java Flash Remoting. It is as capable of providing application
 services to Flash MX as Macromedia's proprietary solution.
 
+%description -l pl.UTF-8
+Projekt OpenAMF to wolnodostępna, mająca otwarte źródła alternatywa
+dla Java Flash Remoting Macromedii. Udostępnia usługi aplikacyjne dla
+Flash MX takie jak rozwiązanie własnościowe Macromedii.
+
 %package javadoc
-Summary:	Online manual for %{name}
-Summary(pl.UTF-8):	Dokumentacja online do %{name}
+Summary:	Online manual for OpenAMF
+Summary(pl.UTF-8):	Dokumentacja Javadoc do OpenAMF
 Group:		Documentation
 Requires:	jpackage-utils
 
 %description javadoc
-Documentation for %{name} -
+Javadoc documentation for OpenAMF.
 
 %description javadoc -l pl.UTF-8
-Dokumentacja do %{name} -
+Dokumentacja Javadoc do OpenAMF.
 
-%description javadoc -l fr
-Javadoc pour %{name}.
+%description javadoc -l fr.UTF-8
+Javadoc pour OpenAMF.
 
 %prep
-%setup -q -n %{name}-%{version}%{_rc}
+%setup -q -n %{name}-%{version}%{subver}
 %{__sed} -i -e 's,\r$,,' changes.txt
 
 %build
