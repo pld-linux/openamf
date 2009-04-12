@@ -73,7 +73,6 @@ digester-rss
 httpunit
 jaxrpc
 junit
-junit
 log4j
 logging
 mysql-connector-java
