@@ -2,7 +2,6 @@
 # Conditional build:
 %bcond_without	javadoc		# don't build javadoc
 #
-%include	/usr/lib/rpm/macros.java
 %define		subver		RC12
 %define		rel	0.1
 Summary:	OpenAMF - Java Flash Remoting
